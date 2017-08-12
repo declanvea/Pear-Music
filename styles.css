@@ -1,0 +1,60 @@
+html {
+  /*background: linear-gradient(to right, #606060 , #C0C0C0);*/
+  background-color: #303030;
+  display: flex;
+  justify-content: center;
+}
+body {
+  background: linear-gradient(to right, #606060, #C0C0C0);
+  width: 630px;
+  padding: 15px 30px 30px 30px;
+  border-radius: 1%;
+}
+header {
+  display: flex;
+  justify-content: center;
+}
+img {
+  width: 30%;
+  height: 30%;
+  border-radius: 5%;
+}
+.player {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+audio {
+  width: 540px;
+  height: 25px;
+  padding-bottom: 22px;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+  padding-bottom: 30px;
+}
+.search-form {
+  display: flex;
+  align-items: center;
+}
+input {
+  width: 430px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 15px;
+  padding-left: 10px;
+}
+button {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #282828;
+  color: white;
+  font-size: 12px;
+  margin-left: 5px;
+}
+hr {
+  border-color: white;
+}

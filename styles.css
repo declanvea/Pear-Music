@@ -58,3 +58,8 @@ button {
 hr {
   border-color: white;
 }
+h2 {
+  color: #282828;
+  font-size: 18px;
+  font-family: Arial;
+}

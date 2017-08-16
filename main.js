@@ -43,7 +43,6 @@ function artistSearch() {
       function playSnippet() {
         audio.setAttribute("src", snippet);
         audio.play();
-        span.innerHTML = `${artist} - ${song}`;
       }
       results.appendChild(div);
     }

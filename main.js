@@ -1,34 +1,51 @@
-/*
-  Here is a rough idea for the steps you could take:
-*/
 
-// 1. First select and store the elements you'll be working with
-// 2. Create your `submit` event for getting the user's search term
-// 3. Create your `fetch` request that is called after a submission
-// 4. Create a way to append the fetch results to your page
-// 5. Create a way to listen for a click that will play the song in the audio play
+let results = document.querySelector('.results');
+let searchButton = document.querySelector("button");
+let searchText = document.querySelector('.search-for-artist');
+let audio = document.querySelector('audio');
+let span = document.querySelector('span');
 
-let button = document.querySelector('button');
-let inputBox = document.querySelector('input');
+// api pulled from the itunes api documentation
+let apiUrl = "https://itunes.apple.com/search?media=music&term=";
 
-
-let apiUrl = "https://itunes.apple.com/search?term=";
-
-button.addEventListener("click", searchRequest);
-inputBox.addEventListener("keypress", function(event){
+// setting the search to trigger if both the button is pressed or user types "enter"
+searchButton.addEventListener("click", artistSearch);
+searchText.addEventListener("keypress", function(event){
   if (event.keyCode === 13) {
-    searchRequest();
+    artistSearch();
   }
 });
-function searchRequest() {
-  let inputData = inputBox.value;
-  let url = `${apiUrl}${inputData}`;
+// fetching by combining the input text and the itunes api format
+function artistSearch() {
+  let typed = searchText.value;
+  let url = `${apiUrl}${typed}`;
   fetch(url).then(function (response) {
-    response.json().then();
+    response.json().then(findArtist)
   });
+  // iterating over the data pulled to populate artist, song, album, and an audio preview snippet
+  function findArtist(data) {
+    results.innerHTML = "";
+    for (var i = 0; i < 25; i++) {
+      let snippet = data.results[i].previewUrl;
+      let artist = data.results[i].artistName;
+      let song = data.results[i].trackName;
+      let album = data.results[i].collectionName;
+      let div = document.createElement('div');
+      div.setAttribute("class", "result");
+      div.innerHTML = `
+                    <p class="p1">${artist}</p>
+                    <img src=${data.results[i].artworkUrl100} alt="album cover">
+                    <p class="p2">${song}</p>
+                    <p class="p3">${album}</p>
+                    `;
+  // created an event listener to play the audio sound snippet, music plays by clicking anywhere on the div
+      div.addEventListener("click", playSnippet);
+      function playSnippet() {
+        audio.setAttribute("src", snippet);
+        audio.play();
+        span.innerHTML = `${artist} - ${song}`;
+      }
+      results.appendChild(div);
+    }
+  }
 }
-
-// TODO: Divs to populate by search:
-//     "trackName": song name,
-//     "collectionName": album,
-//     "artistName": artist,

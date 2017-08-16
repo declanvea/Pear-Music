@@ -1,5 +1,4 @@
 html {
-  /*background: linear-gradient(to right, #606060 , #C0C0C0);*/
   background-color: #303030;
   display: flex;
   justify-content: center;
@@ -7,8 +6,9 @@ html {
 body {
   background: linear-gradient(to right, #606060, #C0C0C0);
   width: 630px;
-  padding: 15px 30px 30px 30px;
+  padding: 15px 30px 5px 30px;
   border-radius: 1%;
+  margin: 5px;
 }
 header {
   display: flex;
@@ -18,13 +18,14 @@ img {
   width: 30%;
   height: 30%;
   border-radius: 5%;
+  margin-bottom: 30px;
 }
-.player {
+form {
   display: flex;
   justify-content: center;
   margin-top: 30px;
 }
-audio {
+.music-player {
   width: 540px;
   height: 25px;
   padding-bottom: 22px;
@@ -35,7 +36,7 @@ audio {
   padding-top: 25px;
   padding-bottom: 30px;
 }
-.search-form {
+.search-for-artist {
   display: flex;
   align-items: center;
 }
@@ -62,4 +63,56 @@ h2 {
   color: #282828;
   font-size: 18px;
   font-family: Arial;
+  text-align: center;
+}
+.results {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.results div{
+  background-image: url('images/record.jpg');
+  background-size: cover;
+  width: 225px;
+  height: 225px;
+  color: white;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.results div img {
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+}
+
+.results div p {
+  font-size: 12px;
+  font-family: Arial;
+  display: flex;
+  justify-content: center;
+}
+.results div .p1 {
+  font-size: 15px;
+  font-weight: bold;
+}
+.results div .p2 {
+  color: #C0C0C0;
+}
+.results div .p3 {
+  color: #C0C0C0;
+  font-style: italic;
+}
+main {
+  margin-bottom: 15px;
+}
+footer {
+  color: #282828;
+  font-size: 13px;
+  font-family: Arial;
+  font-style: italic;
+  text-align: center;
 }

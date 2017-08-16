@@ -2,28 +2,35 @@
 <html>
 <head>
   <title>Pear Music</title>
-<link rel="icon" type="image/png" href="./images/newfavicon-16x16.png" sizes="16x16" /><link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="./images/newfavicon-16x16.png" sizes="16x16" />
+<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
 </head>
 <body>
   <div class="container">
     <header>
       <img src="http://logopond.com/logos/5879049015e9a44bb85e8dd97b444054.png" alt="pear">
     </header>
-    <section class="player">
-      <audio class="music-player" controls="controls" src=""></audio>
-    </section>
-    <hr/>
-    <section class="search">
-      <form class="search-form">
-      <input type="text" placeholder="Search for Artist">
-      <button label="Submit">Search</button>
+    <main>
+    <section class="audio">
+      <form>
+        <audio class="music-player" controls="controls" src=""></audio>
       </form>
+        <hr/>
+    </section>
+    <section class="search">
+      <input class="search-for-artist" type="text" placeholder="Search for Artist">
+      <button label="Search">Search</button>
     </section>
     <hr/>
+    <h2>Search Results:</h2>
     <section class="results">
-      <h2>Search Results:</h2>
     </section>
   </div>
+  </main>
+  <footer>
+    <p>&copy Pear Inc.</p>
+  </footer>
   <script src="main.js"></script>
 </body>
 </html>
